@@ -1,0 +1,49 @@
+LIBFTPRINT.A
+- rendre un makefile + library + fonctions 
+- allowed: malloc, free, write, va_start, va_arg, va_copy, va_end + libft
+
+- ne gere pas de buffer
+-conversion
+	 %c = un seul char
+	 %s = chaine de char
+	 %p = pointeur void * en hexa
+	 %d = nb decimal 
+	 %i = nb entier
+	 %u = nb decimal non signe 
+	 %x = nb en hexa minuscules
+	 %X = nb en hexa MAJ
+	 %% = signe pourcentage
+	
+- bonus
+	gerer flag -0 et largeur min du champ avec tt conversions
+	flag "# +"
+
+
+---------------------------------------------------------------------------------
+
+ARGUMENTS VARIABLES
+
+#include <stdarg.h>
+
+va_start: commencer a parcourir la liste d'args
+va_arg: recuperer un arg de la liste a chaque appel
+va_end: fini de lire la liste d'arg
+va_list: type pour declaration
+
+fonction variadique: obligee d'avoir min 1 vrai argument puis "..."
+
+----------------------------------------------------------------------------------
+
+PLAN DE FONCTIONS 
+
+printf: general 
+formats: to find what is after % 
+printchar: return 1, write char 
+printstr: return length of str, write str
+printptr: print ptr 
+printnbr: putnbr to write the nb, return length of nbrs
+printunsigned: putnbr + decimal
+printhex: print en hexadecimal
+print%
+ptrlen/numlen/hexlen: to be reused in print smth, calculate and return length of each types 
+putstr/putptr/puthex: to be used in each to mix print + len 
